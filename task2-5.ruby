@@ -80,9 +80,9 @@ end
 
 #ハッシュのキーにworkplace_keysの要素以外が設定されていた場合にInvalidKeyErrorを発生させる
 def check_key(params)
-  workplace_keys = [:greeting, :place, :staff_name]
+  workplace_greeting_keys = [:greeting, :place, :staff_name]
   params.each_key do |key|
-    unless workplace_keys.include?(key)
+    unless workplace_greeting_keys.include?(key)
       raise InvalidKeyError.new(params, key)
     end
   end
@@ -110,3 +110,15 @@ data.each do |params|
     puts "#{e.class}: #{e.error_message} => 無効なキー：#{e.error_key}, ハッシュ：#{e.error_params}"
   end
 end
+
+=begin
+以下は出力内容
+
+Hello,Boss
+Hi
+（・・・誰？）
+「・・・・・」
+NoStringError: 文字列でない値が含まれています。 => {:greeting=>1111}
+InvalidKeyError: 無効なキーが含まれています。 => 無効なキー：task, ハッシュ：{:task=>"mail", :place=>"workplace"}
+
+= end
