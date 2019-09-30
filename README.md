@@ -8,5 +8,4 @@ RaiseTech ２周目の課題
            * 職場ではbossとtanakaだけには挨拶する。  
            * 職場以外なら無視。  
            * greetメソッドの引数として渡されるハッシュに文字列以外の値が使われていた場合NoStringErrorが発生する。  
-           * greetメソッドの引数として渡されるハッシュにgreet,place,staff_name以外のキーが設定されていた場合にInvalidKeyErrorが発生する。  
-
+           * greetメソッドの引数として渡されるハッシュにgreet,place,staff_name以外のキーが設定されていた場合にInvalidKeyErrorが発生する。
